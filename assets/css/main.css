@@ -85,21 +85,29 @@ h1{
 #home{
     margin-top: 1.5em;
     background-color: rgb(255, 255, 255);
-    height: 700px;
+/*    display: flex;
+    flex-direction: column;*/
 }
 
 #logo{
     width: 15%;
+    margin: 2% 0 0 2%;
     float: left;
 }
 
 #slideshow{
-    height: 100%;
-    float: left;
+    display: inline-block;
+    width: 60%;
+    margin-left: 3%;
+    padding: 5px 0 5px 0;
+    clear: both;
+    border-radius: 8px;
 }
 
 .mySlides{
-    height: 100%;
+    display: inline-block;
+    width: 100%;
+    border-radius: 8px;
 }
 
 #about{
@@ -128,7 +136,6 @@ h1#about-heading{
 #gallery{
     background-color: #ffffff;
     height: 600px;
-    float: none;
 }
 
 h1#gallery-heading{
