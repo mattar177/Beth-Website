@@ -1,0 +1,151 @@
+@font-face{
+    font-family: big_noodle_titling;
+    src: url("../fonts/big_noodle_titling.ttf");
+}
+
+html{
+    /*background-color: #e2e2e2;*/
+    background-image: url("../images/background.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+h1{
+    font-family: big_noodle_titling;
+    font-size: 7em;
+    letter-spacing: 8px;
+    font-weight: 100;
+}
+
+/*#sidebar{
+    width: 30px;
+    height: 10em;
+    position: fixed;
+    left: 3%;
+    top: 35%;
+    background-color: #f0e095;
+    border-radius: 15px;
+    box-shadow: 0px 1.5px 5px #7a7a7a inset;
+}*/
+
+#sidebar{
+    width: 30px;
+    height: 12.5em;
+    position: fixed;
+    left: 0;
+    top: 35%;
+    /*background-color: #eab83b;*/
+    background-color: #ffc634;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0px 1.5px 5px #7a7a7a inset;
+    opacity: .6;
+}
+
+#sidebar:hover{
+    opacity: 1;
+}
+
+.dot{
+    width: 100%;
+    height: 15%;
+    margin-bottom: 100%;
+    margin-left: 30%;
+    background-image: url("../images/sidebar-dot.png");
+    background-size: 40% 40%;
+    background-repeat: no-repeat;
+}
+
+#dot-1{
+    margin-top: 100%;
+}
+
+#dot-1:hover, #dot-2:hover, #dot-3:hover{
+    cursor: pointer;
+}
+
+.dot-active{
+    width: 100%;
+    height: 15%;
+    margin-bottom: 100%;
+    margin-left: 30%;
+    background-image: url("../images/sidebar-dot-selected.png");
+    background-size: 40% 40%;
+    background-repeat: no-repeat;
+}
+
+/*#arrow{
+    background-image: url("../images/sidebar-arrow.png");
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 10%;
+    margin-left: 10%;
+}*/
+
+#home{
+    margin-top: 1.5em;
+    background-color: rgb(255, 255, 255);
+    height: 700px;
+}
+
+#logo{
+    width: 15%;
+    float: left;
+}
+
+#slideshow{
+    height: 100%;
+    float: left;
+}
+
+.mySlides{
+    height: 100%;
+}
+
+#about{
+    background-color: #ffc634;
+    height: 300px;
+}
+
+h1#about-heading{
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+    margin-top: 0;
+    position: relative;
+    top: 270px;
+    left: .5em;
+    float: left;
+    z-index: 2;
+}
+
+#profile-photo{
+    height: 100%;
+    float: left;
+    margin-left: -5%;
+    z-index: 1;
+}
+
+#gallery{
+    background-color: #ffffff;
+    height: 600px;
+    float: none;
+}
+
+h1#gallery-heading{
+    margin: 0 .2em;
+    padding: .3em .5em;
+}
+
+.card{
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 8px;
+    box-shadow: 0px 3px 15px #aaaaaa;
+    margin-bottom: 1.5em;
+    z-index: 0;
+    opacity: .5;
+}
+
+.active{
+    opacity: 1;
+}

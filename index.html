@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <title>EJR Design</title>
+</head>
+<body>
+    <div id="background">
+        <div id="sidebar">
+            <div class="dot-active" id="dot-1" onClick="gotoHome()"></div>
+            <div class="dot" id="dot-2" onclick="gotoAbout()"></div>
+            <div class="dot" id="dot-3" onClick="gotoGallery()"></div>
+        </div>
+
+        <div id="home" class="card active">
+            <div id="logo">
+                <img style="width: 100%;" src="assets/images/logo.png" alt="logo">
+            </div>
+            <div id="slideshow">
+                <img class="mySlides" id="slide1" src="assets/images/home-images/1_00.jpg">
+                <img class="mySlides" id="slide2" src="assets/images/home-images/bus stop.jpg">
+                <img class="mySlides" id="slide3" src="assets/images/home-images/Mountain Bike.jpg">
+                <img class="mySlides" id="slide4" src="assets/images/home-images/red mock up.jpg">
+                <img class="mySlides" id="slide5" src="assets/images/home-images/watermark.jpg">
+            </div>
+        </div>
+
+        <script>
+        
+        let slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            let i;
+            let x = document.getElementsByClassName("mySlides");
+            let current;
+
+            for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {slideIndex = 1}
+            current = "#" + x[slideIndex-1].id;
+            $(current).css({
+                "margin-left": (($("#home").width() - $(current).width()) / 2)
+            });
+            $(current).fadeIn(1000);
+            //x[slideIndex-1].style.display = "block";
+            setTimeout(carousel, 5000); // Change image every 2 seconds
+        }
+        
+        </script>
+
+        <div id="about" class="card">
+            <h1 id="about-heading">ABOUT</h1>
+            <div id="profile-photo">
+                <img style="height: 100%;" src="assets/images/4me.jpg" alt="Photo of me">
+            </div>
+        </div>
+
+        <div id="gallery" class="card">
+            <h1 id="gallery-heading">GALLERY</h1>
+        </div>
+    </div>
+</body>
+</html>
