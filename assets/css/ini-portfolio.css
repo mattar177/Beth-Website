@@ -1,0 +1,48 @@
+.mainHead::before{
+    right: 1em;
+}
+.mainHead::after{
+    left: 1em;
+}
+
+.head2::before{
+    right: 5.2em;
+}
+.head2::after{
+    left: 5.2em;
+}
+
+.head3::before{
+    right: 3.25em;
+}
+.head3::after{
+    left: 3.25em;
+}
+
+.head4::before{
+    right: 2.3em;
+}
+.head4::after{
+    left: 2.3em;
+}
+
+.head5::before{
+    right: 1.9em;
+}
+.head5::after{
+    left: 1.9em;
+}
+
+.head6::before{
+    right: 2.55em;
+}
+.head6::after{
+    left: 2.55em;
+}
+
+.head7::before{
+    right: 4.3em;
+}
+.head7::after{
+    left: 4.3em;
+}
