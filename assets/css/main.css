@@ -115,6 +115,16 @@ h1{
     /*border-radius: 8px;*/
 }
 
+.animate-fade{
+    animation: fading 6s infinite;
+}   
+@keyframes fading{
+    0%{opacity: 0}
+    20%{opacity: 1}
+    80%{opacity: 1}
+    100%{opacity: 0}
+}
+
 #about{
     background-color: #ffc634;
     height: 300px;
