@@ -1,13 +1,12 @@
+/****** GENERAL ******/
 @font-face{
     font-family: big_noodle_titling;
     src: url("../fonts/big_noodle_titling.ttf");
 }
 
-html{
-    /*background-color: #e2e2e2;*/
-    background-image: url("../images/background.png");
-    background-repeat: repeat;
-    background-attachment: fixed;
+html, body{
+    margin: 0;
+    padding: 0;
 }
 
 h1{
@@ -17,78 +16,75 @@ h1{
     font-weight: 100;
 }
 
-/*#sidebar{
-    width: 30px;
-    height: 10em;
-    position: fixed;
-    left: 3%;
-    top: 35%;
-    background-color: #f0e095;
-    border-radius: 15px;
-    box-shadow: 0px 1.5px 5px #7a7a7a inset;
-}*/
-
-#topbar{
-    width: 20%;
-    height: 2.5em;
-    position: fixed;
-    left: 40%;
-    top: 0;
-    /*background-color: #eab83b;*/
-    background-color: #ffc634;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    box-shadow: 0px 1.5px 5px #7a7a7a inset;
-    opacity: .6;
+.card{
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 8px;
+    box-shadow: 0px 3px 15px #aaaaaa;
+    margin-bottom: 1.5em;
+    z-index: 0;
+    opacity: .5;
 }
 
-#sidebar:hover{
+.active{
     opacity: 1;
 }
 
-.dot{
+/****** HEADER ******/
+#header{
     width: 100%;
-    height: 15%;
-    margin-bottom: 100%;
-    margin-left: 30%;
-    background-image: url("../icons/sidebar-dot.png");
-    background-size: 40% 40%;
-    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    z-index: 1;
 }
 
-#dot-1{
-    margin-top: 100%;
+#logo{
+    width: 8%;
+    min-height: 1px; /* Fixes IE bug*/
+    margin: 2em 45% .5em;
 }
 
-#dot-1:hover, #dot-2:hover, #dot-3:hover{
+#nav-bar{
+    width: 60%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: .8em;
+}
+
+.nav-btn{
+    padding: 0 2em 0;
+}
+
+.nav-btn:hover{
     cursor: pointer;
 }
 
-.dot-active{
-    width: 100%;
-    height: 15%;
-    margin-bottom: 100%;
-    margin-left: 30%;
-    background-image: url("../icons/sidebar-dot-selected.png");
-    background-size: 40% 40%;
-    background-repeat: no-repeat;
+.nav-current{
+    border-bottom: 5px solid #ffc634;
+    /* border-right: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0; */
 }
 
+h2{
+    font-family: big_noodle_titling;
+    font-weight: 100;
+    font-size: 1.2em;
+    letter-spacing: .1em;
+    margin-bottom: -.4em;
+}
 
+/****** HOME ******/
 #home{
-    margin-top: 3.5em;
+    margin-top: 25vh;
     background-color: rgb(255, 255, 255);
     padding: 0;
     overflow: hidden;
     /*display: flex;
     flex-direction: column;*/
-}
-
-#logo{
-    width: 15%;
-    margin: 2% 0 0 2%;
-    position: absolute;
-    z-index: 1;
 }
 
 #slideshow{
@@ -118,6 +114,7 @@ h1{
     100%{opacity: 0}
 }
 
+/****** ABOUT ******/
 #about{
     background-color: #ffc634;
     height: 300px;
@@ -134,16 +131,9 @@ h1#about-heading{
     z-index: 2;
 }
 
-#profile-photo{
-    height: 100%;
-    float: left;
-    margin-left: -5%;
-    z-index: 1;
-}
-
+/****** GALLERY ******/
 #gallery{
     background-color: #ffffff;
-    height: 600px;
 }
 
 h1#gallery-heading{
@@ -151,16 +141,24 @@ h1#gallery-heading{
     padding: .3em .5em;
 }
 
-.card{
-    width: 70%;
-    margin-left: 15%;
-    border-radius: 8px;
-    box-shadow: 0px 3px 15px #aaaaaa;
-    margin-bottom: 1.5em;
-    z-index: 0;
-    opacity: .5;
+#gallery-container{
+    width: 94%;
+    margin-left: 3%;
+    column-count: 3;
+    column-gap: 3%;
 }
 
-.active{
+.gallery-img-container{
+    margin-bottom: 2em;
+}
+
+.gallery-img-container:hover .gallery-img{
+    opacity: .3;
+}
+
+.gallery-img{
+    width: 100%;
+    filter: grayscale(100%);
     opacity: 1;
+    transition: .5s ease;
 }

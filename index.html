@@ -5,43 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/main.css">
-    <!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
+
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/main.js"></script>
+
     <title>EJR Design</title>
 </head>
+
 <body>
-    <div id="background">
-        <div id="topbar">
-            <div class="dot-active" id="dot-1" onClick="gotoHome()"></div>
-            <div class="dot" id="dot-2" onclick="gotoAbout()"></div>
-            <div class="dot" id="dot-3" onClick="gotoGallery()"></div>
-        </div>
 
-        <div id="home" class="card active">
-            <div id="logo">
-                <img style="width: 100%;" src="assets/images/logo.png" alt="logo">
-            </div>
-            <div id="slideshow">
-                <img class="mySlides animate-fade" id="slide1" src="assets/images/home-images/books.jpg">
-                <img class="mySlides animate-fade" id="slide2" src="assets/images/home-images/helpyoself.jpg">
-                <img class="mySlides animate-fade" id="slide3" src="assets/images/home-images/ini.jpg">
-                <img class="mySlides animate-fade" id="slide4" src="assets/images/home-images/pastaaa.jpg">
-                <img class="mySlides animate-fade" id="slide5" src="assets/images/home-images/watermark.jpg">
-            </div>
+    <div id="header">
+        <div id="logo">
+            <img style="width: 100%;" src="assets/images/logo.png" alt="logo">
         </div>
-        <script src="assets/js/slideshow.js"></script>
-
-        <div id="about" class="card">
-            <h1 id="about-heading">ABOUT</h1>
-            <div id="profile-photo">
-                <img style="height: 100%;" src="assets/images/4me.jpg" alt="Photo of me">
-            </div>
-        </div>
-
-        <div id="gallery" class="card">
-            <h1 id="gallery-heading">GALLERY</h1>
+        <div id="nav-bar">
+            <div class="nav-btn nav-current" onclick="gotoHome()"><h2>HOME</h2></div>
+            <div class="nav-btn" onclick="gotoAbout()"><h2>ABOUT</h2></div>
+            <div class="nav-btn" onclick="gotoGallery()"><h2>GALLERY</h2></div>
+            <div class="nav-btn"><h2>CONTACT</h2></div>
         </div>
     </div>
+
+    <div id="home" class="card active">
+        
+        <div id="slideshow">
+            <img class="mySlides animate-fade" id="slide1" src="assets/images/home-images/books.jpg">
+            <img class="mySlides animate-fade" id="slide2" src="assets/images/home-images/helpyoself.jpg">
+            <img class="mySlides animate-fade" id="slide3" src="assets/images/home-images/ini.jpg">
+            <img class="mySlides animate-fade" id="slide4" src="assets/images/home-images/pastaaa.jpg">
+            <img class="mySlides animate-fade" id="slide5" src="assets/images/home-images/watermark.jpg">
+        </div>
+    </div>
+    <script src="assets/js/slideshow.js"></script>
+
+    <div id="about" class="card">
+        <h1 id="about-heading">ABOUT</h1>
+    </div>
+
+    <div id="gallery" class="card">
+        <h1 id="gallery-heading">GALLERY</h1>
+        <div id="gallery-container">
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/gallery/caving events poster.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/gallery/stand.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/gallery/wednesday at one.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/dogs-trust/4.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/lesson-learned/21.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/books/1_00.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/banner/Anchor Mock Up.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/gallery/bus stop.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/gallery/front of light2.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/home-images/helpyoself.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/home-images/pastaaa.jpg" alt="">
+            </div>
+            <div class="gallery-img-container">
+                <img class="gallery-img" src="assets/images/watermark/watermark.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
