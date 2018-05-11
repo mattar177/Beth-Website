@@ -1,10 +1,40 @@
-<!-- <?php
+<?php
+    function post_captcha($user_response) {
+        $fields_string = '';
+        $fields = array(
+            'secret' => '6Ld-P1gUAAAAALhNMVJmYlNmX_7TWeeFflI3vsul',
+            'response' => $user_response
+        );
+        foreach($fields as $key=>$value)
+        $fields_string .= $key . '=' . $value . '&';
+        $fields_string = rtrim($fields_string, '&');
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+        curl_setopt($ch, CURLOPT_POST, count($fields));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($result, true);
+    }
+
 
     if ($_POST["submit"])
     {
+        $res = post_captcha($_POST['g-recaptcha-response']);
+
+        if (!$res['success']) 
+        {
+            // What happens when the CAPTCHA wasn't checked
+            $error = '<br />Please make sure you have ticked the reCAPTCHA box';
+        }
+
         if (!$_POST["name"])
         {
-            $error = "<br />Please enter your name";
+            $error .= "<br />Please enter your name";
         }
 
         if (!$_POST["email"])
@@ -24,11 +54,11 @@
 
         if ($error)
         {
-            $result = '<div class = "alert alert-danger"><strong>There were error(s) in your form:</strong> '.$error.'</div>';
+            $result = '<div class = "error"><strong>There were error(s) in your form:</strong> '.$error.'</div>';
         }
         else
         {
-            if (mail("mr123789@gmail.com", "Comment from website", "Name: ".$_POST["name"]."
+            if (mail("beth@ejrgraphicdesign.co.uk", "Message from website", "Name: ".$_POST["name"]."
             
                 email: ".$_POST["email"]."
 
@@ -36,14 +66,14 @@
             
             ))
             {
-                $result = '<div class = "alert alert-success"><strong>Thank you!</strong> I\'ll be in touch.</div>';
+                $result = '<div class = "success"><strong>Thank you!</strong> I\'ll be in touch.</div>';
                 $_POST["name"] = "";
                 $_POST["email"] = "";
                 $_POST["message"] = "";
             }
             else
             {
-                $result = '<div class = "alert alert-danger">Sorry, there was an error sending your message. Please try again later.</div>';
+                $result = '<div class = "error">Sorry, there was an error sending your message. Please try again later.</div>';
             }
 
         }
@@ -66,7 +96,7 @@
             echo "Mail not sent!";
         }
 */
-?> -->
+?>
    
 
 <!DOCTYPE html>
@@ -80,8 +110,9 @@
     <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 
     <title>EJR Design</title>
 </head>
@@ -202,17 +233,18 @@
 
     <section id="contact" class="card">
         <h1>GET IN TOUCH!</h1>
-        <!-- <?php echo $result; ?> -->
-        <form action="" method="post">
+        <?php echo $result; ?>
+        <form action="#contact" method="post">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your name here">
-            <!-- value = "<?php echo $_POST["name"]; ?>" -->
+            <input type="text" id="name" name="name" placeholder="Your name here" value = "<?php echo $_POST["name"]; ?>">
 
             <label for="email">Email Address:</label>
-            <input type="text" id="email" name="email" placeholder="Your email address here">
+            <input type="text" id="email" name="email" placeholder="Your email address here" value = "<?php echo $_POST["email"]; ?>">
 
             <label for="message">Your Message:</label>
-            <textarea id="message" name="message" placeholder="Your message here"></textarea>
+            <textarea id="message" name="message" placeholder="Your message here" value = "<?php echo $_POST["message"]; ?>"></textarea>
+
+            <div class="g-recaptcha" data-sitekey="6Ld-P1gUAAAAAJ2yzb_XM1iBKl0rd5X5y1vYhAJH"></div>
 
             <input type="submit" name="submit" value="Send">
         </form>
