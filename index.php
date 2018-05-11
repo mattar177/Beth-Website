@@ -44,7 +44,7 @@
 
         if (!$_POST["message"])
         {
-            $error .= "<br />Please enter a comment";
+            $error .= "<br />Please enter a message";
         }
 
         if ($_POST["email"] != "" AND !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) 

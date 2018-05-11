@@ -403,6 +403,7 @@ input[type=submit]{
     margin: 1.5em 30% 0;
     height: 3em;
     border: 2px solid #ffc634;
+    cursor: pointer;
 }
 
 textarea, 
